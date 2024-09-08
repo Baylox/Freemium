@@ -8,3 +8,57 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+
+# PHPUnit
+/phpunit.xml
+.phpunit.result.cache
+
+# Asset Mapper
+/public/assets/
+/assets/vendor/
+
+# Dependencies
+/node_modules/
+
+# Build artifacts
+/build/
+
+# IDE and editor files
+/.idea/
+/.vscode/
+*.swp
+.DS_Store
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Other common files to ignore
+*.class
+*.pyc
+*.pyo
+*.pyd
+*.tgz
+*.zip
+*.tar.gz
+*.rar
