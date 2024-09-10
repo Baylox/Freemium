@@ -3,11 +3,41 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+    <!-- Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('build/img/building1.jpg') }}" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('build/img/building2.jpg') }}" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('build/img/building3.jpg') }}" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Products Section -->
     <section class="container mt-5">
+        <h2 class="text-center mb-4">Featured Products</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="" class="card-img-top" alt="Product 1">
+                    <img src="{{ asset('build/img/product1.jpg') }}" class="card-img-top" alt="Product 1">
                     <div class="card-body">
                         <h5 class="card-title">Product 1</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -17,7 +47,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="product2.jpg" class="card-img-top" alt="Product 2">
+                    <img src="{{ asset('build/img/product2.jpg') }}" class="card-img-top" alt="Product 2">
                     <div class="card-body">
                         <h5 class="card-title">Product 2</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -27,11 +57,44 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="product3.jpg" class="card-img-top" alt="Product 3">
+                    <img src="{{ asset('build/img/product3.jpg') }}" class="card-img-top" alt="Product 3">
                     <div class="card-body">
                         <h5 class="card-title">Product 3</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">"Great products and excellent customer service!"</p>
+                            <h5 class="card-title">- John Doe</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">"I love shopping here. Always find what I need."</p>
+                            <h5 class="card-title">- Jane Smith</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-text">"Fast shipping and great prices. Highly recommend!"</p>
+                            <h5 class="card-title">- Bob Johnson</h5>
+                        </div>
                     </div>
                 </div>
             </div>
