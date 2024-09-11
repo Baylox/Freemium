@@ -48,6 +48,9 @@
         </nav>
     {% endblock %}
     
+    <!-- Display flash messages after the header -->
+    {% include '_partials/_flash.html.twig' %}
+
     {% block body %}
         <main>
             {% block content %}{% endblock %}
