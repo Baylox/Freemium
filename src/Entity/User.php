@@ -19,11 +19,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    
+    private ?int $id = null;
+
     #[ORM\Column(length: 255)]
     private ?string $username = null;
 
-    private ?int $id = null;
 
     #[ORM\Column(length: 180)]
     #[Assert\NotNull]
@@ -44,7 +44,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $createdAt = null;
 
-    
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('nom');
+    }
     public function getId(): ?int
     {
         return $this->id;
