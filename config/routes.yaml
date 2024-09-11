@@ -8,26 +8,11 @@ home:
     path: /
     controller: App\Controller\HomeController::index
 
-messages:
-    path: /messages
-    controller: App\Controller\MessageController::index
-
-customers:
-    path: /customers
-    controller: App\Controller\CustomerController::index
-
-projects:
-    path: /projects
-    controller: App\Controller\ProjectController::index
-
-resources:
-    path: /resources
-    controller: App\Controller\ResourceController::index
-
-help:
-    path: /help
-    controller: App\Controller\HelpController::index
-
 settings:
     path: /settings
     controller: App\Controller\SettingsController::index
+
+register:
+    path: /register
+    controller: App\Controller\RegistrationController::register
+    methods: [GET, POST]
