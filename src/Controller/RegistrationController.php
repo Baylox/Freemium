@@ -29,14 +29,30 @@ class RegistrationController extends AbstractController
             /** @var string $plainPassword */
             $plainPassword = $form->get('plainPassword')->getData();
 
-
-            // encode the plain password
+            // Generate a token
+            $tokenRegistration = $tokenGeneratorInterface->generateToken();
+            
+            // User
             $user->setPassword($userPasswordHasher->hashPassword($user, $form->get('plainPassword')->getData())); // encode the password
 
-            
+            // User token 
+            $user->setTokenRegistration(tokenRegistration: $tokenRegistration);
+
 
             $entityManager->persist($user); // prepare to save
             $entityManager->flush(); // save
+
+            // Send an email to the user
+            $mailerService->send(
+                to: $user->getEmail(),
+                subject: 'Activate your account',
+                templateTwig: 'registration/activation_email.html.twig',
+                context: [
+                    'user' => $user,
+                    'token' => $tokenRegistration,
+                    'lifeTimeToken' => $user->getTokenRegistrationLifeTime()->format('Y-m-d H:i:s')
+                ]
+            );
 
             $this->addFlash('success', 'Your account has been successfully created! Please check your email to activate your account!');
 
@@ -46,5 +62,10 @@ class RegistrationController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
+    }
+
+    #[Route('/verify', name: 'account-verify')]
+    public function verify( string $token, User $user){
+        dd($token, $user);
     }
 }
