@@ -6,6 +6,9 @@ use Symfony\Component\Mime\Address;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 
+/**
+ * Can generate and send emails
+ */
 class MailerService {
     public function __construct(private readonly MailerInterface $mailer) {}
 
