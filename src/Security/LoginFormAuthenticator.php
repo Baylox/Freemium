@@ -23,28 +23,33 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
     public const LOGIN_ROUTE = 'app_login';
 
     public function __construct(private UrlGeneratorInterface $urlGenerator)
+        {
+        }
+    
+        private function getTargetPathFromSession($session, string $firewallName): ?string
+        {
+            return $this->getTargetPathFromSession($session, $firewallName);
+        }
+    
+        public function authenticate(Request $request): Passport
+        {
+            $email = $request->get('email');
+    
+            $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
+    
+            return new Passport(
+                new UserBadge($email),
+                new PasswordCredentials($request->get('password')),
+                [
+                    new CsrfTokenBadge('authenticate', $request->get('_csrf_token')),
+                    new RememberMeBadge(),
+                ]
+            );
+        }
+    
+        public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-    }
-
-    public function authenticate(Request $request): Passport
-    {
-        $email = $request->getPayload()->getString('email');
-
-        $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
-
-        return new Passport(
-            new UserBadge($email),
-            new PasswordCredentials($request->getPayload()->getString('password')),
-            [
-                new CsrfTokenBadge('authenticate', $request->getPayload()->getString('_csrf_token')),
-                new RememberMeBadge(),
-            ]
-        );
-    }
-
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
-    {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
+        if ($targetPath = $this->getTargetPathFromSession($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
