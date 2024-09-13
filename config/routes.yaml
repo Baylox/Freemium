@@ -16,3 +16,12 @@ register:
     path: /register
     controller: App\Controller\RegistrationController::register
     methods: [GET, POST]
+
+test_email:
+    path: /test-email
+    controller: App\Controller\TestEmailController::testEmail
+
+send_test_email:
+    path: /send-test-email
+    controller: App\Controller\TestEmailController::sendTestEmail
+
