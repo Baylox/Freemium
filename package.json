@@ -25,6 +25,7 @@
         "cheerio": "^1.0.0",
         "docker": "^0.2.14",
         "engine.io": "^6.6.0",
+        "getsetdeep": "^5.6.0",
         "lodash": "^4.17.21",
         "nodemailer": "^6.9.9",
         "path-to-regexp": "^8.0.0",
