@@ -50,7 +50,7 @@ class RegistrationController extends AbstractController
                 context: [
                     'user' => $user,
                     'token' => $tokenRegistration,
-                    'lifeTimeToken' => $user->getTokenRegistrationLifeTime()->format('Y-m-d H:i:s')
+                    'lifeTimeToken' => $user->getTokenRegistrationLifeTime()->format('d-m-Y-H-i-s')
                 ]
             );
 
@@ -66,6 +66,6 @@ class RegistrationController extends AbstractController
 
     #[Route('/verify', name: 'account-verify')]
     public function verify( string $token, User $user){
-        dd($token, $user);
+        dd($token);
     }
 }
