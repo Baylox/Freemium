@@ -1,0 +1,14 @@
+{# templates/test_email.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Test Email</title>
+</head>
+<body>
+	<h1>Test Email</h1>
+	<form action="{{ path('send_test_email') }}" method="post">
+		<button type="submit">Send Test Email</button>
+	</form>
+</body>
+</html>
