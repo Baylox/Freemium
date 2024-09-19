@@ -21,12 +21,7 @@ security:
                 path: app_logout
                 # where to redirect after logout
                 target: app_login
-                
-                guard: 
-                authenticators:
-                    - App\Security\LoginFormAuthenticator
-                # where to redirect after login if the user was not previously on a protected page
-                
+
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week in seconds
