@@ -49,8 +49,11 @@ Clone the project
 Install dependencies
 
 ```bash
-  npm install
   composer install
+```
+
+```bash
+  npm install
 ```
 
 Start the server
