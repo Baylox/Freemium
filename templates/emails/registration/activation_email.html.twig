@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Activation de votre compte
+{% endblock %}
+
+{% block content %}
+    <p>Bonjour {{ user.username }},</p>
+
+    <p>Merci de vous être inscrit sur notre site. Veuillez cliquer sur le lien ci-dessous pour activer votre compte :</p>
+
+    <p><a href="{{ activationLink }}">Activer mon compte</a></p>
+
+    <p>Cordialement,<br>L'équipe de notre site</p>
+{% endblock %}
