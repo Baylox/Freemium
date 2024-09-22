@@ -39,10 +39,6 @@
 *.sqlite
 *.dql
 
-# OS generated files
-Thumbs.db
-.DS_Store
-
 # Python bytecode files
 *.pyc
 *.pyo
