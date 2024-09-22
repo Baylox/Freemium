@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -15,7 +14,7 @@
 ###< phpunit/phpunit ###
 
 ###> symfony/phpunit-bridge ###
-.phpunit.result.cache
+/.phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
@@ -24,18 +23,8 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 
-# PHPUnit
-/phpunit.xml
-.phpunit.result.cache
-
-# Asset Mapper
-/public/assets/
-/assets/vendor/
-
 # Dependencies
 /node_modules/
-
-# Build artifacts
 /build/
 
 # IDE and editor files
@@ -48,16 +37,21 @@
 *.log
 *.sql
 *.sqlite
+*.dql
 
 # OS generated files
 Thumbs.db
 .DS_Store
 
-# Other common files to ignore
-*.class
+# Python bytecode files
 *.pyc
 *.pyo
 *.pyd
+
+# Java compiled files
+*.class
+
+# Archive files
 *.tgz
 *.zip
 *.tar.gz
